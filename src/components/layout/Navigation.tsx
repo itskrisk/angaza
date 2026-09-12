@@ -12,7 +12,7 @@ export function Logo() {
       <img
         alt="ANGAZA Foundation"
         className="h-9 sm:h-10 w-auto object-contain max-w-[180px]"
-        src="/src/images/LOGO/Angazalogo.png"
+        src="/images/LOGO/Angazalogo.png"
       />
     </Link>
   );
