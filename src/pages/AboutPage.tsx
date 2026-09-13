@@ -69,56 +69,20 @@ export function AboutPage() {
 
       {/* ── Partners ── */}
       <section className="bg-white border-b border-[#e8e8e8]">
-
-        {/* Section label */}
-        <div className="border-b border-[#e8e8e8] px-6 lg:px-14 py-3 flex items-center justify-between">
-          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#aaa]">Official Partnerships</span>
+        <div className="border-b border-[#e8e8e8] px-6 lg:px-14 py-3">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#aaa]">Partners</span>
         </div>
-
-        <div className="px-6 lg:px-14 pt-10 pb-4">
-          <h2
-            className="font-black text-black leading-[0.9] tracking-[-0.03em]"
-            style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
-          >
-            Our Operational Partners
-          </h2>
-          <p className="mt-4 text-[15px] text-[#555] max-w-xl leading-relaxed">
-            INK CHARITY works hand-in-hand with key partners to deliver leadership, resources, and field logistics to communities across Kenya.
-          </p>
-        </div>
-
-        {/* Partner cards with logos */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[#e8e8e8] mt-8">
-          {partners.map((p, i) => (
-            <Reveal
-              as="div"
-              key={p.name}
-              delay={i * 80}
-              className={`flex flex-col gap-6 p-8 lg:p-10 ${i < 2 ? 'border-b md:border-b-0 md:border-r border-[#e8e8e8]' : ''}`}
-            >
-              {/* Logo */}
-              <div className="h-12 flex items-center">
-                <img
-                  src={p.logo}
-                  alt={p.name}
-                  className="h-full w-auto object-contain max-w-[160px]"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2 flex-1">
-                <p className="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-[#aaa]">{p.role}</p>
-                <h3 className="text-[17px] font-bold text-black leading-snug">
-                  {p.href ? (
-                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="hover:underline inline-flex items-center gap-1">
-                      {p.name} <span className="text-sm">↗</span>
-                    </a>
-                  ) : (
-                    p.name
-                  )}
-                </h3>
-                <p className="text-[14px] text-[#555] leading-relaxed font-normal">{p.description}</p>
-              </div>
-            </Reveal>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-20 px-6 lg:px-14 py-14 sm:py-20">
+          {partners.map((p) => (
+            <div key={p.name} className="flex items-center justify-center">
+              {p.href ? (
+                <a href={p.href} target="_blank" rel="noopener noreferrer">
+                  <img src={p.logo} alt={p.name} className="h-10 sm:h-12 w-auto object-contain max-w-[180px] opacity-80 hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              ) : (
+                <img src={p.logo} alt={p.name} className="h-10 sm:h-12 w-auto object-contain max-w-[180px] opacity-80 hover:opacity-100 transition-opacity duration-300" />
+              )}
+            </div>
           ))}
         </div>
       </section>
