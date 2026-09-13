@@ -8,11 +8,11 @@ import { cn } from '@/lib/cn';
 
 export function Logo() {
   return (
-    <Link aria-label="ANGAZA Foundation Home" to="/" className="flex items-center shrink-0">
+    <Link aria-label="INK CHARITY Home" to="/" className="flex items-center shrink-0 gap-2">
       <img
-        alt="ANGAZA Foundation"
+        alt="INK CHARITY"
         className="h-9 sm:h-10 w-auto object-contain max-w-[180px]"
-        src="/images/LOGO/Angazalogo.png"
+        src="/images/LOGO/newlogo.png"
       />
     </Link>
   );

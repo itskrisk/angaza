@@ -5,35 +5,35 @@ import { Reveal } from '@/components/ui/Reveal';
 const workStreams = [
   {
     number: '01',
-    title: 'Food Rescue Logistics',
-    body: 'We collect fresh surplus food from events, markets, farms, and providers across Nairobi and Kisumu. Our team inspects, packages, and transports supplies directly to registered community kitchens.',
-    metricLabel: 'meals moved last month',
-    metricValue: 2347,
-    image: '/src/images/v.jpg',
-    caption: 'Direct delivery of rice and maize to Mully Children Home.',
-    location: 'Mully Children Home, Machakos',
+    title: 'Children\'s Homes & School Support',
+    body: 'We collect and deliver exercise books, textbooks, uniform sweaters, shoes, and sports equipment directly to registered children\'s homes and grassroots primary schools.',
+    metricLabel: 'homes & schools supported',
+    metricValue: 28,
+    image: '/images/OneHope--Benin2013.jpg',
+    caption: 'Direct delivery of educational textbooks and school supplies.',
+    location: 'Machakos & Nairobi, Kenya',
     date: '08 September 2026',
   },
   {
     number: '02',
-    title: 'Direct Giving Route',
-    body: 'We maintain zero unnecessary overhead. M-Pesa contributions instantly purchase fresh grain, cooking gas, and vegetables for community kitchens with digital ledger confirmation.',
-    metricLabel: 'average gift (KES)',
-    metricValue: 500,
-    image: '/src/images/Circle of Life.jpg',
-    caption: 'Community circle meeting after a Friday delivery.',
-    location: 'Nairobi, Kenya',
+    title: 'Elderly Homes & Special Care',
+    body: 'We support elderly care centers and vulnerable seniors with warm clothing, blankets, hygiene items, and nutritional packs so elderly citizens live in comfort.',
+    metricLabel: 'clothing & care packages',
+    metricValue: 1450,
+    image: '/images/Circle of Life.jpg',
+    caption: 'Community distribution circle after receiving care packages.',
+    location: 'Kibera & Coast Region',
     date: '05 September 2026',
   },
   {
     number: '03',
-    title: 'Grassroots Coordination',
-    body: 'Community kitchen leaders decide daily meal schedules. We handle transport logistics, fuel, and receipt tracking while local cooks prepare warm meals on the ground.',
+    title: 'Food Rations & In-Kind Giving',
+    body: 'We coordinate direct donation drop-offs and vehicle pickups for food, clothing, and household goods, supported by Godia Humanitarian Services and inkcoaching.co.ke.',
     metricLabel: 'active field volunteers',
-    metricValue: 89,
-    image: '/src/images/k.jpg',
-    caption: 'Youth leaders coordinating evening route stops.',
-    location: 'Kisumu, Kenya',
+    metricValue: 65,
+    image: '/images/Custom Ink Fundraising.jpg',
+    caption: 'Youth leaders coordinating supply logistics and item collection.',
+    location: 'Kisumu & Eldoret, Kenya',
     date: '02 September 2026',
   },
 ];
@@ -46,17 +46,17 @@ export function OurWorkPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <Reveal as="div" className="lg:col-span-7">
-              <p className="eyebrow mb-4">How We Operate</p>
+              <p className="eyebrow mb-4">How INK CHARITY Operates</p>
               <h1 className="display-heading text-[clamp(2.5rem,8vw,5.5rem)] font-bold text-black">
-                Food moves.<br />People move with it.
+                Direct outreach.<br />Real care in homes &amp; schools.
               </h1>
             </Reveal>
             <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-8 lg:pt-0 lg:pl-10 space-y-6" delay={120}>
               <p className="text-[17px] text-black font-normal leading-relaxed">
-                Three core logistics workstreams. Published numbers. Verified handoffs. Zero theatre.
+                Three clear workstreams delivering essential clothing, learning supplies, and food care where it matters.
               </p>
               <Button href="/donate" variant="accent">
-                Support a Route Today →
+                Support a Center Today →
               </Button>
             </Reveal>
           </div>
@@ -97,7 +97,7 @@ export function OurWorkPage() {
                 </div>
                 <div className="lg:col-span-3 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-6 lg:pt-0 lg:pl-8 flex flex-col justify-between gap-4">
                   <div>
-                    <p className="eyebrow">Live Indicator</p>
+                    <p className="eyebrow">Impact Count</p>
                     <p className="text-[13px] font-medium text-black mt-2">{stream.metricLabel}</p>
                   </div>
                   <Counter
@@ -118,14 +118,14 @@ export function OurWorkPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <Reveal as="div" className="lg:col-span-7 space-y-4">
-              <p className="eyebrow text-[#6e6e73]">The Verification Standard</p>
+              <p className="eyebrow text-[#6e6e73]">Field Transparency</p>
               <h2 className="display-heading text-[clamp(2rem,5vw,3.75rem)] font-bold text-white">
-                The handoff is the proof.
+                Every delivery is verified on site.
               </h2>
             </Reveal>
             <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#2c2c2e] pt-8 lg:pt-0 lg:pl-10 space-y-6" delay={120}>
               <p className="text-[17px] text-[#aeaeb2] font-normal leading-relaxed">
-                We do not stop at collection. Every drop-off is recorded with photos, kitchen signatures, and digital receipts published monthly.
+                Every drop of clothing, books, and food is logged with photos, recipient home signatures, and published reports.
               </p>
               <Button href="/reports" variant="ghost" className="!border-[#3a3a3c] !text-white hover:!bg-[#1c1c1e]">
                 View Financial Reports →

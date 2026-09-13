@@ -26,14 +26,14 @@ export function DonatePage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="grid grid-cols-12 gap-8 items-end">
             <Reveal as="div" className="col-span-12 lg:col-span-7">
-              <p className="eyebrow text-gray-500 mb-4">M-Pesa & Direct Support</p>
+              <p className="eyebrow text-gray-500 mb-4">Support INK CHARITY</p>
               <h1 className="display-heading text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter text-black uppercase">
-                Support a route in 60 seconds.
+                Support a home or school today.
               </h1>
             </Reveal>
             <Reveal as="div" className="col-span-12 lg:col-span-5 border-t lg:border-t-0 lg:border-l border-black pt-8 lg:pt-0 lg:pl-10 space-y-4" delay={120}>
               <p className="text-xl text-black font-normal leading-relaxed">
-                M-Pesa STK push first. Card payment options when needed. Monthly recurring contributions for sustained field operations.
+                Give via M-Pesa, card, or donate physical items like clothes, books, and food directly to children's homes, elderly care centers, and schools.
               </p>
             </Reveal>
           </div>
@@ -77,6 +77,19 @@ export function DonatePage() {
                 <p className="eyebrow text-black">Direct Manual Paybill</p>
                 <p className="text-lg text-black">Paybill Number: <span className="font-bold">{site.mpesa.paybill}</span></p>
                 <p className="text-lg text-black">Account Name: <span className="font-bold">{site.mpesa.account}</span></p>
+              </div>
+
+              <div className="border-t border-black pt-6 space-y-3 bg-white p-5 border">
+                <p className="eyebrow text-black">In-Kind Items (Clothes, Books, Food)</p>
+                <p className="text-sm text-gray-700 font-normal leading-relaxed">
+                  Have clothes, shoes, textbooks, or food packages to donate? Call or WhatsApp us to arrange drop-off or pickup.
+                </p>
+                <a href={`tel:${site.mpesa.phone.replace(/\s/g, '')}`} className="block text-sm font-bold text-black hover:underline">
+                  {site.mpesa.phone}
+                </a>
+                <a href={`mailto:${site.mpesa.email}`} className="block text-sm font-bold text-black hover:underline">
+                  {site.mpesa.email}
+                </a>
               </div>
             </Reveal>
 
@@ -142,7 +155,7 @@ export function DonatePage() {
                           id="phone"
                           inputMode="tel"
                           onChange={(event) => setPhone(event.target.value)}
-                          placeholder="0712 345 678"
+                          placeholder="0769 032 075"
                           required
                           type="tel"
                           value={phone}
@@ -208,12 +221,12 @@ export function DonatePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-12 gap-8 items-center">
             <Reveal as="div" className="col-span-12 lg:col-span-7 space-y-4">
-              <p className="eyebrow text-gray-400">Financial Audit</p>
-              <h2 className="display-heading text-4xl sm:text-6xl font-bold text-white">Every shilling logged to destination.</h2>
+              <p className="eyebrow text-gray-400">Field Ledger &amp; Audit</p>
+              <h2 className="display-heading text-4xl sm:text-6xl font-bold text-white">Every donation logged to destination.</h2>
             </Reveal>
             <Reveal as="div" className="col-span-12 lg:col-span-5 border-t lg:border-t-0 lg:border-l border-gray-800 pt-8 lg:pt-0 lg:pl-10 space-y-6" delay={120}>
               <p className="text-lg text-gray-300 font-normal leading-relaxed">
-                We publish itemized ledger reports for total transparency across all operational pickups and drops.
+                We record itemized ledgers for all clothing drives, educational supply distributions, and financial receipts.
               </p>
               <div>
                 <Button href="/reports" variant="ghost" className="!border-white !text-white hover:!bg-white hover:!text-black">
@@ -227,4 +240,3 @@ export function DonatePage() {
     </>
   );
 }
-

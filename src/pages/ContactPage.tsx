@@ -11,12 +11,12 @@ export function ContactPage() {
             <Reveal as="div" className="lg:col-span-7">
               <p className="eyebrow mb-4">Direct Contact</p>
               <h1 className="display-heading text-[clamp(2.25rem,7vw,5rem)] font-bold text-black">
-                Call first.<br />We move second.
+                Reach out directly.<br />We are ready to assist.
               </h1>
             </Reveal>
             <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-8 lg:pt-0 lg:pl-10 space-y-4" delay={120}>
               <p className="text-[17px] text-black font-normal leading-relaxed">
-                If you have surplus food, funds, or a community route that needs opening, reach out directly. We reply fast with clear operational steps.
+                Whether you wish to donate clothes, books, food, or funds, or if you represent a children's home, elderly center, or school in need of support, get in touch with INK CHARITY.
               </p>
             </Reveal>
           </div>
@@ -30,9 +30,9 @@ export function ContactPage() {
 
             <Reveal as="div" className="lg:col-span-5 space-y-6">
               <p className="eyebrow">M-Pesa Information</p>
-              <h2 className="display-heading text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-black">Direct Support Paybill.</h2>
+              <h2 className="display-heading text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-black">Direct Giving Details.</h2>
               <p className="text-[15px] text-[#6e6e73] leading-relaxed font-normal">
-                For food pickups or donation queries, call or email first so we can coordinate vehicles and destination kitchens.
+                For physical donations (clothing, shoes, books, food kits) or financial queries, feel free to call or email us directly.
               </p>
               <div className="border-t border-[#e5e5e7] pt-6 space-y-3">
                 <p className="text-[17px] text-black">
@@ -46,7 +46,7 @@ export function ContactPage() {
 
             <Reveal as="div" className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4" delay={100}>
               <div className="bg-white border border-[#e5e5e7] p-6 space-y-3">
-                <p className="eyebrow">Phone</p>
+                <p className="eyebrow">Phone &amp; WhatsApp</p>
                 <a className="block text-[1.25rem] font-bold text-black hover:underline break-all" href={`tel:${site.mpesa.phone.replace(/\s/g, '')}`}>
                   {site.mpesa.phone}
                 </a>
@@ -58,7 +58,7 @@ export function ContactPage() {
                 <a className="block text-[1.1rem] font-bold text-black hover:underline break-all" href={`mailto:${site.mpesa.email}`}>
                   {site.mpesa.email}
                 </a>
-                <p className="text-[12px] text-[#6e6e73]">Food pickups, donations, field requests</p>
+                <p className="text-[12px] text-[#6e6e73]">Donations, school requests, field coordination</p>
               </div>
 
               <div className="bg-white border border-[#e5e5e7] p-6 space-y-3 sm:col-span-2">
@@ -72,19 +72,19 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Pickup Protocol */}
+      {/* Donation & Pickup Protocol */}
       <section className="bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <Reveal as="div" className="lg:col-span-7 space-y-4">
-              <p className="eyebrow">Pickup Protocol</p>
+              <p className="eyebrow">Pickup &amp; Drop-off Protocol</p>
               <h2 className="display-heading text-[clamp(1.75rem,4vw,3rem)] font-bold text-black">
-                Quantity, location, and timing.
+                Item description, location, and timing.
               </h2>
             </Reveal>
             <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-8 lg:pt-0 lg:pl-10" delay={120}>
               <p className="text-[17px] text-black font-normal leading-relaxed">
-                When calling for food pickups, give us quantity estimates, access points, and an on-site contact. We confirm driver dispatch immediately.
+                When donating clothes, school books, or food items, let us know your location, an estimated quantity, and a contact person. We will coordinate driver pickup or confirm drop-off details immediately.
               </p>
             </Reveal>
           </div>

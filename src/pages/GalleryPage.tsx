@@ -29,7 +29,7 @@ export function GalleryPage() {
             <PhotoGrid photos={site.photos} />
           </Reveal>
           <div className="flex flex-col sm:flex-row items-center justify-between border-t border-black pt-6 text-xs font-semibold uppercase tracking-wider text-gray-600 gap-4">
-            <p>Authentic local photographs from ANGAZA field operations.</p>
+            <p>Authentic local photographs from INK CHARITY field operations across homes and schools.</p>
             <p>Archive updated {site.updated}</p>
           </div>
         </div>

@@ -23,7 +23,7 @@ export function WorkPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {site.photos.slice(1, 4).map((photo, index) => (
+          {site.photos.slice(10, 13).map((photo, index) => (
             <Reveal as="div" key={photo.src} delay={index * 90} className="space-y-4">
               <div className="photo-frame aspect-[4/3]">
                 <img alt={photo.alt} src={photo.src} loading="lazy" />

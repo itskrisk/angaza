@@ -70,8 +70,8 @@ export function StorySection() {
           <Reveal as="div" className="col-span-12 lg:col-span-6" delay={120}>
             <div ref={mediaRef} className="photo-frame aspect-[4/3]">
               <img
-                alt="Children playing in Kibera after a meal delivery"
-                src="/src/images/b.jpg"
+                alt="Volunteers spending quality time at Machakos Children Home"
+                src={site.story.image}
               />
               <div className="photo-caption">
                 <span className="font-semibold uppercase tracking-wider text-[11px]">
