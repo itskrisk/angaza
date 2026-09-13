@@ -23,8 +23,7 @@ export function ImpactStrip() {
             className="px-8 py-12 lg:py-16 flex flex-col gap-3"
           >
             <Counter
-              className="font-black text-white leading-none tracking-[-0.04em]"
-              style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' } as React.CSSProperties}
+              className="font-black text-white leading-none tracking-[-0.04em] text-[clamp(3.5rem,6vw,6rem)]"
               decimals={0}
               label={metric.label}
               value={metric.value}
