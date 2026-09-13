@@ -1,53 +1,45 @@
 import { site } from '@/config/site';
-import { Counter } from '@/components/ui/Counter';
 import { Reveal } from '@/components/ui/Reveal';
+import { Counter } from '@/components/ui/Counter';
 
 export function ImpactStrip() {
   return (
-    <section aria-labelledby="impact-title" className="bg-[#f5f5f7] border-b border-[#e5e5e7] py-14 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <section className="bg-[#0a0a0a] text-white">
+      {/* Top label bar */}
+      <div className="border-b border-white/10 px-6 lg:px-12 py-3 flex items-center gap-3">
+        <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
+        <span className="text-[11px] font-mono text-white/40 uppercase tracking-widest">
+          Impact to date — updated weekly
+        </span>
+      </div>
 
-          {/* Left Column: Heading & Context */}
-          <Reveal as="div" className="lg:col-span-4 space-y-4 sm:space-y-5">
-            <p className="eyebrow text-[#86868b]">Impact to Date</p>
-            <h2
-              className="display-heading text-[clamp(1.85rem,5vw,3rem)] font-bold text-black leading-tight"
-              id="impact-title"
-            >
-              Numbers we publish<br className="hidden sm:inline" /> every single week.
-            </h2>
-            <p className="text-[15px] sm:text-[16px] leading-relaxed text-[#515154] font-normal">
-              Every metric here represents direct deliveries of clothes, food, books, and essential items to children's homes, schools, and elderly care centers across Kenya.
+      {/* Metric grid — 4 across on desktop, 2x2 on mobile */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y divide-white/10 border-b border-white/10">
+        {site.impactMetrics.map((metric, i) => (
+          <Reveal
+            as="div"
+            key={metric.label}
+            delay={i * 60}
+            className="px-8 py-12 lg:py-16 flex flex-col gap-3"
+          >
+            <Counter
+              className="font-black text-white leading-none tracking-[-0.04em]"
+              style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' } as React.CSSProperties}
+              decimals={0}
+              label={metric.label}
+              value={metric.value}
+            />
+            <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-white/35 leading-relaxed">
+              {metric.label}
             </p>
           </Reveal>
+        ))}
+      </div>
 
-          {/* Right Column: Mobile-First Responsive Metric Grid */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {site.impactMetrics.map((metric, index) => (
-              <Reveal
-                as="div"
-                className="flex min-h-[9.5rem] flex-col justify-between border border-[#e5e5e7] bg-white p-5 sm:p-7 shadow-sm transition-shadow duration-200 hover:shadow-md"
-                delay={index * 80}
-                key={metric.label}
-              >
-                <p className="text-[11px] sm:text-[12px] font-bold text-[#86868b] uppercase tracking-wider leading-snug">
-                  {metric.label}
-                </p>
-                <div className="mt-3 flex items-baseline flex-wrap gap-x-2">
-                  <Counter
-                    className="text-[2.25rem] sm:text-[2.75rem] lg:text-[3.25rem] font-bold tracking-tight text-black leading-none number-display"
-                    decimals={metric.decimals}
-                    label={metric.label}
-                    suffix={metric.suffix}
-                    value={metric.value}
-                  />
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-        </div>
+      {/* Bottom caption strip */}
+      <div className="px-6 lg:px-12 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[11px] font-mono text-white/25 uppercase tracking-wider">
+        <span>All figures represent verified on-site deliveries</span>
+        <span>Kenya · Est. 2024</span>
       </div>
     </section>
   );

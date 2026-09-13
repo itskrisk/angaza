@@ -2,155 +2,159 @@ import { Link } from 'react-router-dom';
 import { site } from '@/config/site';
 import { Logo } from './Navigation';
 
+const compliance = [
+  { label: 'Data Protection Policy', badge: 'Act 2019', to: '/privacy' },
+  { label: 'Financial Audit Ledger', badge: 'Public', to: '/reports' },
+  { label: 'Child Safeguarding Standard', badge: 'Enforced', to: '/about' },
+  { label: 'Ethics & Whistleblower', badge: 'Direct', href: `mailto:${site.mpesa.email}` },
+  { label: 'Donor Privacy Rights', badge: 'GDPR-Aligned', to: '/privacy' },
+  { label: 'Non-Profit Transparency', badge: 'Annual', to: '/reports' },
+];
+
+const focusAreas = [
+  'Children\'s Homes',
+  'Grassroots Primary Schools',
+  'Senior Care Facilities',
+  'Food & Nutrition Relief',
+  'Clothing & Shoe Drives',
+  'Books & School Supplies',
+];
+
 export function Footer() {
   return (
-    <footer className="border-t border-[#e5e5e7] bg-white text-black font-sans selection:bg-black selection:text-white">
-      {/* ── Top Corporate Assurance Bar ── */}
-      <div className="border-b border-[#e5e5e7] bg-[#f9f9fb] py-3.5">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-y-2 gap-x-6 text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#6e6e73]">
-          <div className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-black"></span>
-            <span>INK CHARITY &bull; Institutional Compliance</span>
-          </div>
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-            <span>Kenya Data Protection Act (2019) Compliant</span>
-            <span className="hidden md:inline text-[#d1d1d6]">•</span>
-            <span className="hidden md:inline">Itemized Field Ledger Audits</span>
-            <span className="hidden md:inline text-[#d1d1d6]">•</span>
-            <span>Child Safeguarding Enforced</span>
-          </div>
-        </div>
-      </div>
+    <footer
+      className="text-white font-sans selection:bg-white selection:text-black"
+      style={{ backgroundColor: '#000000' }}
+    >
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 py-14 lg:px-8 lg:py-18">
+      {/* ── Main grid ── */}
+      <div className="px-6 lg:px-12 py-16 lg:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12"
+        style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
 
-        {/* ── Main Corporate Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-[#e5e5e7]">
-
-          {/* Col 1: Organization & Identity (4 cols) */}
-          <div className="sm:col-span-2 lg:col-span-4 space-y-5">
+        {/* Brand block — 4 cols */}
+        <div className="sm:col-span-2 lg:col-span-4 flex flex-col gap-6">
+          <div>
             <Logo />
-            <p className="max-w-sm text-[14px] leading-relaxed text-[#515154] font-normal">
-              INK CHARITY is a hands-on Kenyan charity initiative. We coordinate direct distributions of food, clothing, educational materials, and daily essentials straight to registered children's homes, elderly care centers, and primary schools.
+          </div>
+          <p className="text-[14px] leading-relaxed text-white/50 font-normal max-w-sm">
+            INK CHARITY is a hands-on Kenyan charity initiative. We step in wherever help is needed, delivering food, clothes, books, and essential care directly to registered homes and schools.
+          </p>
+          <div className="space-y-2 text-[12px] text-white/40" style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+            <p>
+              <span className="text-white/60 font-semibold">Powered by:{' '}</span>
+              <a href="https://inkcoaching.co.ke/" target="_blank" rel="noopener noreferrer"
+                className="text-white font-bold hover:underline">
+                inkcoaching.co.ke →
+              </a>
             </p>
-            <div className="pt-2 border-t border-[#f0f0f2] space-y-1.5 text-[12px] text-[#6e6e73]">
-              <p><strong className="text-black font-semibold">Operational Partners:</strong> <a href="https://inkcoaching.co.ke/" target="_blank" rel="noopener noreferrer" className="font-bold text-black underline hover:text-[#6e6e73]">inkcoaching.co.ke &rarr;</a> &bull; Godia Humanitarian Services &bull; Muncheez Technologies Ltd</p>
-              <p><strong className="text-black font-semibold">Regulatory Compliance:</strong> Kenya Data Protection Act 2019 registered data handling.</p>
-            </div>
+            <p><span className="text-white/60 font-semibold">Humanitarian Partner:{' '}</span>Godia Humanitarian Services</p>
+            <p><span className="text-white/60 font-semibold">Technology:{' '}</span>Muncheez Technologies Ltd</p>
           </div>
-
-          {/* Col 2: Core Focus Areas (2 cols) */}
-          <div className="lg:col-span-2 space-y-4">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#86868b]">Focus Areas</p>
-            <ul className="space-y-2.5 text-[14px] text-[#515154]">
-              <li className="hover:text-black transition-colors">Children's Homes</li>
-              <li className="hover:text-black transition-colors">Grassroots Schools</li>
-              <li className="hover:text-black transition-colors">Senior Care Facilities</li>
-              <li className="hover:text-black transition-colors">In-Kind Item Drives</li>
-            </ul>
-          </div>
-
-          {/* Col 3: Corporate Governance & Compliance (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#86868b]">Governance &amp; Compliance</p>
-            <ul className="space-y-2.5 text-[14px]">
-              <li>
-                <Link className="text-[#515154] hover:text-black transition-colors flex items-center justify-between" to="/privacy">
-                  <span>Data Protection Policy</span>
-                  <span className="text-[11px] text-[#aeaeb2] uppercase font-semibold">Act 2019</span>
-                </Link>
-              </li>
-              <li>
-                <Link className="text-[#515154] hover:text-black transition-colors flex items-center justify-between" to="/reports">
-                  <span>Financial Audit Ledger</span>
-                  <span className="text-[11px] text-[#aeaeb2] uppercase font-semibold">Public</span>
-                </Link>
-              </li>
-              <li>
-                <Link className="text-[#515154] hover:text-black transition-colors flex items-center justify-between" to="/about">
-                  <span>Child Safeguarding Standard</span>
-                  <span className="text-[11px] text-[#aeaeb2] uppercase font-semibold">Enforced</span>
-                </Link>
-              </li>
-              <li>
-                <a className="text-[#515154] hover:text-black transition-colors flex items-center justify-between" href={`mailto:${site.mpesa.email}`}>
-                  <span>Ethics &amp; Whistleblower</span>
-                  <span className="text-[11px] text-[#aeaeb2] uppercase font-semibold">Direct</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Official Giving & Contact (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#86868b]">Giving &amp; Official Contact</p>
-            <div className="border border-[#e5e5e7] bg-[#f9f9fb] p-4 space-y-3 text-[13px]">
-              <div className="flex items-center justify-between border-b border-[#e5e5e7] pb-2">
-                <span className="text-[#6e6e73]">M-Pesa Paybill</span>
-                <span className="font-bold text-black">{site.mpesa.paybill}</span>
-              </div>
-              <div className="flex items-center justify-between border-b border-[#e5e5e7] pb-2">
-                <span className="text-[#6e6e73]">Account Name</span>
-                <span className="font-bold text-black">{site.mpesa.account}</span>
-              </div>
-              <div className="flex items-center justify-between border-b border-[#e5e5e7] pb-2">
-                <span className="text-[#6e6e73]">Official Email</span>
-                <a href={`mailto:${site.mpesa.email}`} className="font-bold text-black hover:underline break-all">
-                  {site.mpesa.email}
-                </a>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-[#6e6e73]">Field Enquiries</span>
-                <a href={`tel:${site.mpesa.phone.replace(/\s/g, '')}`} className="font-bold text-black hover:underline">
-                  {site.mpesa.phone}
-                </a>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* ── Bottom Corporate Bar ── */}
-        <div className="pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[12px] text-[#86868b]">
+        {/* Focus Areas — 2 cols */}
+        <div className="lg:col-span-2 flex flex-col gap-4">
+          <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/25">
+            Focus Areas
+          </p>
+          <ul className="space-y-2.5">
+            {focusAreas.map(item => (
+              <li key={item} className="text-[13px] text-white/50 hover:text-white transition-colors duration-200">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <div className="space-y-1">
-            <p>&copy; {new Date().getFullYear()} INK CHARITY. All rights reserved.</p>
-            <p className="text-[11px] text-[#aeaeb2]">Registered Community Charity Initiative &bull; Nairobi, Kenya</p>
+        {/* Governance & Compliance — 3 cols */}
+        <div className="lg:col-span-3 flex flex-col gap-4">
+          <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/25">
+            Governance & Compliance
+          </p>
+          <ul className="space-y-3">
+            {compliance.map((item) => (
+              <li key={item.label}>
+                {'to' in item ? (
+                  <Link to={item.to!}
+                    className="flex items-center justify-between gap-3 text-[13px] text-white/50 hover:text-white transition-colors duration-200 group">
+                    <span>{item.label}</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-white/20 group-hover:text-white/50 transition-colors shrink-0">
+                      {item.badge}
+                    </span>
+                  </Link>
+                ) : (
+                  <a href={item.href}
+                    className="flex items-center justify-between gap-3 text-[13px] text-white/50 hover:text-white transition-colors duration-200 group">
+                    <span>{item.label}</span>
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-white/20 group-hover:text-white/50 transition-colors shrink-0">
+                      {item.badge}
+                    </span>
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Giving & Contact — 3 cols */}
+        <div className="lg:col-span-3 flex flex-col gap-5">
+          <p className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/25">
+            Official Giving & Contact
+          </p>
+
+          {/* M-Pesa block */}
+          <div className="space-y-0 text-[13px]" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            {[
+              { label: 'M-Pesa Paybill', value: site.mpesa.paybill },
+              { label: 'Account Name', value: site.mpesa.account },
+              { label: 'Official Email', value: site.mpesa.email, href: `mailto:${site.mpesa.email}` },
+              { label: 'Field Enquiries', value: site.mpesa.phone, href: `tel:${site.mpesa.phone.replace(/\s/g, '')}` },
+            ].map(({ label, value, href }) => (
+              <div key={label} className="flex items-center justify-between gap-3 px-4 py-3"
+                style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                <span className="text-white/35 shrink-0">{label}</span>
+                {href ? (
+                  <a href={href} className="font-bold text-white hover:underline text-right break-all">{value}</a>
+                ) : (
+                  <span className="font-bold text-white text-right">{value}</span>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
-            {/* Legal & Compliance links */}
-            <div className="flex gap-4 font-medium text-[#515154]">
-              <Link className="hover:text-black transition-colors" to="/privacy">Privacy &amp; Compliance</Link>
-              <span>•</span>
-              <Link className="hover:text-black transition-colors" to="/reports">Audit Reports</Link>
-              <span>•</span>
-              <Link className="hover:text-black transition-colors" to="/contact">Contact Support</Link>
-            </div>
-
-            <span className="hidden sm:block text-[#e5e5e7]">|</span>
-
-            {/* Developer credit */}
-            <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[#86868b]">
-              <span>Developed by</span>
-              <a
-                href="https://iamkris.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black font-semibold hover:underline"
-              >
-                Kris
-              </a>
-              <span className="text-[#e5e5e7]">&bull;</span>
-              <a href="https://iamkris.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
-                iamkris.vercel.app
-              </a>
-            </p>
+          {/* Page links */}
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+            {site.footerNav.map((item) => (
+              <Link key={item.href} to={item.href}
+                className="text-[12px] text-white/35 hover:text-white transition-colors truncate">
+                {item.label}
+              </Link>
+            ))}
           </div>
-
         </div>
 
       </div>
+
+      {/* ── Bottom bar ── */}
+      <div className="px-6 lg:px-12 py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[11px] font-mono text-white/25">
+        <div className="space-y-0.5">
+          <p>&copy; {new Date().getFullYear()} INK CHARITY. All rights reserved.</p>
+          <p>Registered Community Charity Initiative · Nairobi, Kenya</p>
+        </div>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <Link className="hover:text-white transition-colors" to="/privacy">Privacy</Link>
+          <span className="text-white/15">·</span>
+          <Link className="hover:text-white transition-colors" to="/reports">Reports</Link>
+          <span className="text-white/15">·</span>
+          <Link className="hover:text-white transition-colors" to="/contact">Contact</Link>
+          <span className="text-white/15">·</span>
+          <a href="https://iamkris.vercel.app" target="_blank" rel="noopener noreferrer"
+            className="hover:text-white transition-colors">
+            Built by Kris
+          </a>
+        </div>
+      </div>
+
     </footer>
   );
 }
