@@ -27,6 +27,13 @@ const partners = [
     description:
       'Powers digital tracking systems, ledger transparency tooling, and field communication infrastructure for distribution routes.',
   },
+  {
+    logo: '/images/LOGO/vukalogo.png',
+    role: 'Community Outreach Partner',
+    name: 'Vuka',
+    href: null,
+    description: 'Community outreach and mobilisation partner.',
+  },
 ];
 
 export function AboutPage() {
