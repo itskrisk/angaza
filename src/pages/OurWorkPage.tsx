@@ -1,16 +1,15 @@
-import { Button } from '@/components/ui/Button';
+import { Link } from 'react-router-dom';
 import { Counter } from '@/components/ui/Counter';
 import { Reveal } from '@/components/ui/Reveal';
 
 const workStreams = [
   {
     number: '01',
-    title: 'Children\'s Homes & School Support',
-    body: 'We collect and deliver exercise books, textbooks, uniform sweaters, shoes, and sports equipment directly to registered children\'s homes and grassroots primary schools.',
+    title: "Children's Homes & School Support",
+    body: "We collect and deliver exercise books, textbooks, uniform sweaters, shoes, and sports equipment directly to registered children's homes and grassroots primary schools.",
     metricLabel: 'homes & schools supported',
     metricValue: 28,
     image: '/images/OneHope--Benin2013.jpg',
-    caption: 'Direct delivery of educational textbooks and school supplies.',
     location: 'Machakos & Nairobi, Kenya',
     date: '08 September 2026',
   },
@@ -21,7 +20,6 @@ const workStreams = [
     metricLabel: 'clothing & care packages',
     metricValue: 1450,
     image: '/images/Circle of Life.jpg',
-    caption: 'Community distribution circle after receiving care packages.',
     location: 'Kibera & Coast Region',
     date: '05 September 2026',
   },
@@ -32,7 +30,6 @@ const workStreams = [
     metricLabel: 'active field volunteers',
     metricValue: 65,
     image: '/images/Custom Ink Fundraising.jpg',
-    caption: 'Youth leaders coordinating supply logistics and item collection.',
     location: 'Kisumu & Eldoret, Kenya',
     date: '02 September 2026',
   },
@@ -41,97 +38,119 @@ const workStreams = [
 export function OurWorkPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white border-b border-[#e5e5e7]">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <Reveal as="div" className="lg:col-span-7">
-              <p className="eyebrow mb-4">How INK CHARITY Operates</p>
-              <h1 className="display-heading text-[clamp(2.5rem,8vw,5.5rem)] font-bold text-black">
-                Direct outreach.<br />Real care in homes &amp; schools.
-              </h1>
-            </Reveal>
-            <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-8 lg:pt-0 lg:pl-10 space-y-6" delay={120}>
-              <p className="text-[17px] text-black font-normal leading-relaxed">
-                Three clear workstreams delivering essential clothing, learning supplies, and food care where it matters.
-              </p>
-              <Button href="/donate" variant="accent">
-                Support a Center Today →
-              </Button>
-            </Reveal>
+      {/* ── Hero ── */}
+      <section className="bg-white border-b border-[#e8e8e8]">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="px-6 lg:px-14 py-16 lg:py-24 border-b lg:border-b-0 lg:border-r border-[#e8e8e8] flex flex-col justify-center gap-6">
+            <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#aaa]">How INK CHARITY Operates</p>
+            <h1
+              className="font-black text-black leading-[0.9] tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(3rem, 7vw, 6rem)' }}
+            >
+              Direct outreach.<br />
+              <span style={{ color: '#bbb' }}>Real care.</span>
+            </h1>
           </div>
+          <Reveal as="div" className="px-6 lg:px-14 py-16 lg:py-24 flex flex-col justify-center gap-8" delay={100}>
+            <p className="text-[18px] text-black font-normal leading-relaxed max-w-lg">
+              Three clear workstreams delivering essential clothing, learning supplies, and food care where it matters.
+            </p>
+            <Link
+              to="/donate"
+              className="self-start inline-flex items-center justify-center bg-black text-white text-[13px] font-bold uppercase tracking-[0.12em] px-8 py-4 hover:bg-[#222] transition-colors duration-200"
+            >
+              Support a Center Today
+            </Link>
+          </Reveal>
         </div>
       </section>
 
-      {/* Workstreams */}
-      <section className="bg-[#f5f5f7] border-b border-[#e5e5e7] py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="border-b border-[#e5e5e7] pb-6 mb-12">
-            <p className="eyebrow">Active Workstreams</p>
-          </div>
-
-          <div className="space-y-8">
-            {workStreams.map((stream, index) => (
-              <Reveal
-                as="article"
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 border border-[#e5e5e7] p-6 sm:p-8 bg-white"
-                delay={index * 60}
-                key={stream.title}
-              >
-                <div className="lg:col-span-1">
-                  <p className="eyebrow">{stream.number}</p>
-                </div>
-                <div className="lg:col-span-4 space-y-3">
-                  <h2 className="text-[clamp(1.25rem,3vw,1.75rem)] font-bold text-black leading-tight">{stream.title}</h2>
-                  <p className="text-[15px] text-[#6e6e73] leading-relaxed font-normal">{stream.body}</p>
-                </div>
-                <div className="lg:col-span-4">
-                  <div className="photo-frame aspect-[4/3]">
-                    <img alt={stream.title} loading="lazy" src={stream.image} />
-                    <div className="photo-caption">
-                      <span className="font-semibold uppercase tracking-wider text-[11px]">{stream.location}</span>
-                      <br />
-                      <span className="text-[#cccccc]">{stream.caption}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="lg:col-span-3 border-t lg:border-t-0 lg:border-l border-[#e5e5e7] pt-6 lg:pt-0 lg:pl-8 flex flex-col justify-between gap-4">
-                  <div>
-                    <p className="eyebrow">Impact Count</p>
-                    <p className="text-[13px] font-medium text-black mt-2">{stream.metricLabel}</p>
-                  </div>
-                  <Counter
-                    className="text-[2.5rem] sm:text-[3rem] font-bold tracking-tight text-black number-display"
-                    decimals={0}
-                    label={stream.metricLabel}
-                    value={stream.metricValue}
-                  />
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      {/* ── Workstreams ── */}
+      <section className="bg-white">
+        <div className="border-b border-[#e8e8e8] px-6 lg:px-14 py-3">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#aaa]">Active Workstreams</span>
         </div>
+
+        {workStreams.map((stream, index) => (
+          <Reveal
+            as="article"
+            key={stream.title}
+            delay={index * 60}
+            className="grid grid-cols-1 lg:grid-cols-2 border-b border-[#e8e8e8]"
+          >
+            {/* Image — alternates sides */}
+            <div className={`relative min-h-[280px] sm:min-h-[360px] overflow-hidden ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
+              <img
+                src={stream.image}
+                alt={stream.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Location tag */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-5 py-3">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-white/60">{stream.location} · {stream.date}</p>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="px-6 lg:px-14 py-12 lg:py-16 flex flex-col justify-between gap-10">
+              <div className="flex flex-col gap-5">
+                <div className="flex items-center gap-4">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#aaa]">{stream.number}</span>
+                  <span className="flex-1 h-px bg-[#e8e8e8]" />
+                </div>
+                <h2
+                  className="font-black text-black leading-[0.92] tracking-[-0.03em]"
+                  style={{ fontSize: 'clamp(1.75rem, 3.5vw, 3rem)' }}
+                >
+                  {stream.title}
+                </h2>
+                <p className="text-[15px] sm:text-[16px] text-[#555] leading-relaxed font-normal max-w-md">
+                  {stream.body}
+                </p>
+              </div>
+
+              {/* Counter */}
+              <div className="flex flex-col gap-1 border-t border-[#e8e8e8] pt-8">
+                <Counter
+                  className="font-black text-black leading-none tracking-[-0.04em] text-[3.5rem]"
+                  decimals={0}
+                  label={stream.metricLabel}
+                  value={stream.metricValue}
+                />
+                <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#aaa]">
+                  {stream.metricLabel}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
       </section>
 
-      {/* Verification CTA */}
-      <section className="bg-[#0a0a0a] text-white py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <Reveal as="div" className="lg:col-span-7 space-y-4">
-              <p className="eyebrow text-[#6e6e73]">Field Transparency</p>
-              <h2 className="display-heading text-[clamp(2rem,5vw,3.75rem)] font-bold text-white">
-                Every delivery is verified on site.
-              </h2>
-            </Reveal>
-            <Reveal as="div" className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-[#2c2c2e] pt-8 lg:pt-0 lg:pl-10 space-y-6" delay={120}>
-              <p className="text-[17px] text-[#aeaeb2] font-normal leading-relaxed">
-                Every drop of clothing, books, and food is logged with photos, recipient home signatures, and published reports.
-              </p>
-              <Button href="/reports" variant="ghost" className="!border-[#3a3a3c] !text-white hover:!bg-[#1c1c1e]">
-                View Financial Reports →
-              </Button>
-            </Reveal>
+      {/* ── Transparency CTA ── */}
+      <section className="bg-[#0a0a0a] text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="px-6 lg:px-14 py-16 lg:py-24 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center gap-5">
+            <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-white/30">Field Transparency</p>
+            <h2
+              className="font-black text-white leading-[0.9] tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)' }}
+            >
+              Every delivery<br />
+              <span className="text-white/30">is verified on site.</span>
+            </h2>
           </div>
+          <Reveal as="div" className="px-6 lg:px-14 py-16 lg:py-24 flex flex-col justify-center gap-8" delay={100}>
+            <p className="text-[17px] text-white/60 font-normal leading-relaxed max-w-lg">
+              Every drop of clothing, books, and food is logged with photos, recipient home signatures, and published reports.
+            </p>
+            <Link
+              to="/reports"
+              className="self-start inline-flex items-center justify-center border border-white text-white text-[13px] font-bold uppercase tracking-[0.12em] px-8 py-4 hover:bg-white hover:text-black transition-colors duration-200"
+            >
+              View Financial Reports
+            </Link>
+          </Reveal>
         </div>
       </section>
     </>
